@@ -1,5 +1,11 @@
 #Import and Labeling
 rt_df <- read.csv("week2.csv", header = TRUE)
-rt_df$factor_condition <- factor(rt_df$condition, labels = c("Control", "Experimental"))
-rt_df$factor_gender <- factor(rt_df$gender, labels = c("Female", "Male", "Nonbinary"))
-  
+rt_df$condition_vector <- factor(rt_df$condition, labels = c("Control", "Experimental"))
+rt_df$gender_vector <- factor(rt_df$gender, labels = c("Female", "Male", "Nonbinary"))
+
+#Analysis
+mean(rt_df$rt)
+rt_f_df = subset(rt_df, gender_vector == 'Female')
+hist(rt_f_df$rt)
+datasets <- list(rt_df, rt_f_df)
+datasets[1]
