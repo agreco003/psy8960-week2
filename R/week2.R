@@ -5,7 +5,7 @@ rt_df$gender_vector <- factor(rt_df$gender, labels = c("Female", "Male", "Nonbin
 
 #Analysis
 mean(rt_df$rt)
-rt_f_df = subset(rt_df, gender_vector == 'Female')
+rt_f_df = subset(rt_df, subset = gender_vector == "Female")
 hist(rt_f_df$rt)
 datasets <- list(rt_df, rt_f_df)
 datasets[1]
